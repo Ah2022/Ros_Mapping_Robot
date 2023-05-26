@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/ubuntu/my_robot/src/build/devel/setup.sh

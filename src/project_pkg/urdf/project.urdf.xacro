@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+ <link 
+   name="chassis">
+     <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    </visual>
+  
+ </link>
+
+
+  <link
+    name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.2 0.2 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="chassis_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="chassis"/>
+    <child link="base_link"/>
+  </joint>
+
+
+
+
+
+
+  <link
+    name="left_wheel">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.073323 0.181 0.016931"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+
+
+
+
+  <link
+    name="right_wheel">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.069199 -0.181 0.016931"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

@@ -1,0 +1,2 @@
+lidar_rviz:my_mapping_pkg:navigation_pkg:odom_pub:project_pkg:rplidar_ros:teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/h24/Desktop/my_robot/devel -DCMAKE_INSTALL_PREFIX=/home/h24/Desktop/my_robot/install -G Unix Makefiles

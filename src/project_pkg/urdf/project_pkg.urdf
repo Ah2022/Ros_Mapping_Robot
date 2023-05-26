@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+
+<robot
+  name="project_pkg">
+
+
+
+  <link
+    name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0.2 0.2 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+  <link
+    name="left_wheel">
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.073323 0.181 0.016931"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+
+
+
+
+  <link
+    name="right_wheel">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.069199 -0.181 0.016931"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+
+
+
+
+
+  <link
+    name="caster_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/caster_link.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/caster_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint
+    name="caster_joint"
+    type="continuous">
+    <origin
+      xyz="0.10968 0 -0.021174"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+
+
+  <link
+    name="laser_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+
+  <joint
+    name="laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.084984 0.0030102 0.167"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+
+
+
+
+
+  <link
+    name="camera_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.89804 0.89804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://project_pkg/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.12459 -0.073617 0.13495"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+
+</robot>

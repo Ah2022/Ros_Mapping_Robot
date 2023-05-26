@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/my_robot/src/build/devel
+
+Name: my_slam_package
+Description: Description of my_slam_package
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,60 @@
+# Hector SLAM Parameters
+
+# Map Size and Resolution
+map_resolution: 0.05         # Resolution of the created map [m/cell]
+map_size: 1024               # Size of the created map [cells]
+map_start_x: 0.5             # Start position of the map in x-direction [m]
+map_start_y: 0.5             # Start position of the map in y-direction [m]
+
+# Laser Scan Parameters
+laser_scan_topic: /rplidarNode/scan      # Topic name for the laser scan data
+use_front_side_range: false  # Use front-side range only (set to true if your laser scanner does not provide rear-side range)
+
+# Frame IDs
+map_frame: map               # Frame ID of the map
+odom_frame: odom             # Frame ID of the odometry
+base_link_frame: base_link   # Frame ID of the robot's base link
+scan_frame: laser             # Frame ID of the laser scan
+
+# Odometry Parameters
+use_odometry: true           # Use odometry for pose estimation
+update_factor_free: 0.4      # Update factor for the free cells during the pose update [0-1]
+update_factor_occupied: 0.9  # Update factor for the occupied cells during the pose update [0-1]
+
+# Mapping Parameters
+map_update_interval: 5.0     # Interval at which the map is updated [s]
+map_update_distance: 0.4     # Distance the robot needs to travel before triggering a map update [m]
+
+# Occupancy Grid Parameters
+occupied_space_value: 100    # Value for occupied space in the occupancy grid
+free_space_value: 0          # Value for free space in the occupancy grid
+unknown_space_value: -1      # Value for unknown space in the occupancy grid
+
+# Transformations
+transform_publish_period: 0.05  # Period in seconds at which the transforms are published
+map_frame_publish_rate: 0.5     # Publish rate for the map frame [Hz]
+
+tf_map_scanmatch_transform_frame_name: map         # Frame ID of the transform between map and scan match coordinates
+tf_map_scanmatch_transform_frame_name: base_link   # Frame ID of the transform between base_link and scan match coordinates
+tf_map_odom_transform_frame_name: odom             # Frame ID of the transform between map and odom coordinates
+
+
+# Additional Transformations
+additional_transforms:
+  - parent_frame_id: base_link        # Parent frame ID of the additional transformation
+    child_frame_id: laser_link        # Child frame ID of the additional transformation
+    transform:
+      translation: [0.1, 0.0, 0.05]   # Translation vector [x, y, z] of the additional transformation
+      rotation: [0.0, 0.0, 0.0, 1.0]  # Quaternion [x, y, z, w] representing the rotation of the additional transformation
+
+  - parent_frame_id: odom             # Parent frame ID of the additional transformation
+    child_frame_id: base_link         # Child frame ID of the additional transformation
+    transform:
+      translation: [0.0, 0.0, 0.0]    # Translation vector [x, y, z] of the additional transformation
+      rotation: [0.0, 0.0, 0.0, 1.0]  # Quaternion [x, y, z, w] representing the rotation of the additional transformation
+
+  - parent_frame_id: map              # Parent frame ID of the additional transformation
+    child_frame_id: odom              # Child frame ID of the additional transformation
+    transform:
+      translation: [0.0, 0.0, 0.0]    # Translation vector [x, y, z] of the additional transformation
+      rotation: [0.0, 0.0, 0.0, 1.0]  # Quaternion [x, y, z, w] representing the rotation of the additional transformation
