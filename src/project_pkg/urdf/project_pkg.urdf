@@ -7,6 +7,21 @@
   name="project_pkg">
 
 
+<!-- Map frame -->
+<joint name="map_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="base_link"/>
+  <child link="map"/>
+</joint>
+<link name="map" />
+
+<!-- Odom frame -->
+<joint name="odom_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0" />
+  <parent link="base_link"/>
+  <child link="odom"/>
+</joint>
+<link name="odom" />
 
   <link
     name="base_link">

@@ -10,19 +10,19 @@
   
 
   
-    <!-- Launch odometry node -->
+    <!-- Launch odometry node 
   <node name="odom_publisher" pkg="odom_pub" type="odom_pub_node" output="screen">
     <remap from="/encoder" to="/odom_publisher/encoder"/>
-  </node>
+  </node>-->
 
 
-  <!-- Start Navigation Stack -->
+  <!-- Start Navigation Stack 
   <node name="map_server" pkg="map_server" type="map_server" args="$(find navigation_pkg)/maps/my_map.yaml" />
   <node name="amcl" pkg="amcl" type="amcl" output="screen">
     <param name="use_map_topic" value="true" />
   </node>
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
     <rosparam file="$(find navigation_pkg)/config/move_base_params.yaml" command="load" />
-  </node>
+  </node>-->
+  
 </launch>
-
