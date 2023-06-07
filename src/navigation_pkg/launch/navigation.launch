@@ -7,9 +7,9 @@
   <include file="$(find my_mapping_pkg)/launch/mapping.launch" />
   
   
-  
 
-  
+
+
     <!-- Launch odometry node 
   <node name="odom_publisher" pkg="odom_pub" type="odom_pub_node" output="screen">
     <remap from="/encoder" to="/odom_publisher/encoder"/>
