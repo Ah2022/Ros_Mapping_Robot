@@ -48,9 +48,11 @@ To build and run this project, you will need:
 
 - **ROS Distribution:** ROS Noetic (or any supported distribution).
 <div allign="center">
-  <img src="melodic.jpg" />
+  <img height="100" width="100" src="melodic.jpg" />
 </div>
+
 - **SLAM Package:** Gmapping, Hector SLAM, or Cartographer.
+
 - **Dependencies:**
   - `roslaunch`
   - `rviz`
