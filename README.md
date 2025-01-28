@@ -2,7 +2,7 @@
 
 Welcome to the 2D Mapping Robot project! This repository contains the code and documentation for a robot that performs 2D mapping using the Robot Operating System (ROS). The robot leverages a combination of sensor data and SLAM (Simultaneous Localization and Mapping) techniques to create a map of its environment.
 <div allign="center">
-  <img src="" />
+  <img src="epic.png" />
 </div>
 ---
 
