@@ -115,7 +115,7 @@ To build and run this project, you will need:
 ## Directory Structure
 
 ```
-2d-mapping-robot/
+Ros_Mapping_Robot/
 ├── src/
 │   ├── robot_bringup/       # Launch files and robot configuration
 │   ├── slam/                # SLAM-specific nodes and configurations
